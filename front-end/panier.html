@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Orinoco</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="Orinoco, site de vente en ligne, spécialiste en vente d'ours en peluche fait à la main.">
+        <link rel="stylesheet" href="./css/style.css"/>
+        <script src="https://kit.fontawesome.com/8be45f96a1.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="back__nav">
+            <div class="front__nav">
+                <a href="index.html"><img src="./pictures/logo.png" alt="Logo_Orinoco" class="logo__orinoco"></a>
+                <a href="panier.html"><i class="fas fa-shopping-cart logo_shop"></i></a>
+            </div>
+        </nav>
+        <main>
+            <div id="cache"></div>
+            <div>
+                <section id="section__produit">
+                    <h1>Mon panier</h1>
+                </section>
+            </div>
+            <div class="ajust">
+                <section id="section__priceAndForm">
+                    <h2>Total: <em class="result"></em></h2>
+                    <div> 
+                        <form id="Form">
+                            <div class="form__agencement">
+                                <label for="firstname">Prénom</label>
+                                <input type="text" name="firstname" id="firstname" pattern="[a-zA-ZÀ-ÿ]{2,}" required> 
+                            </div>
+                            <div class="form__agencement">
+                                <label for="name">Nom</label>
+                                <input type="text" name="name" id="name" pattern="[a-zA-ZÀ-ÿ]{2,}" required> 
+                            </div>
+                            <div class="form__agencement">
+                                <label for="email">Adresse mail</label>
+                                <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+[.][a-z]{2,4}" required> 
+                            </div>
+                            <div class="form__agencement">
+                                <label for="address">Votre adresse</label>
+                                <input type="text" name="address" id="address" pattern="[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)+" required> 
+                            </div>
+                            <div class="form__agencement">
+                                <label for="city">Votre ville</label>
+                                <input type="text" name="city" id="city" pattern="[A-Za-z]{2,}" required> 
+                            </div>
+                            <div class="btn__panier">
+                                <button id="sendForm">Valider ma commande</button>
+                                <button id="delete__panier"></button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <script src="./js/panier.js"></script>
+    </body>
+</html>

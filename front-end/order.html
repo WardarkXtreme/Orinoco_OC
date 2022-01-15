@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Orinoco</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="Orinoco, site de vente en ligne, spécialiste en vente d'ours en peluche fait à la main.">
+        <link rel="stylesheet" href="./css/style.css"/>
+        <script src="https://kit.fontawesome.com/8be45f96a1.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="back__nav">
+            <div class="front__nav">
+                <a href="index.html"><img src="./pictures/logo.png" alt="Logo_Orinoco" class="logo__orinoco"></a>
+                <a href="panier.html"><i class="fas fa-shopping-cart logo_shop"></i></a>
+            </div>
+        </nav>
+        <main>
+            <div class="titleOrder">
+                <h1 class="title2">Commande Confirmée</h1><i class="fas fa-check" id="valid"></i>
+            </div>    
+                <section id="order__confirm">
+                <div class="center">        
+                    <div id="message">
+                        <p class="info">Nous avons bien pris en compte votre commande numéro: </br><em id="orderId"></em></br>Nous vous remercions</p>
+                        <p class="info">Le colis sera expédié à :</p>
+                        <ul>
+                            <li>Monsieur/Madame <em id="name"></em> <em id="lastName"></em></li>
+                            <li>Demeurant à <em id="adress"></em> <em id="city"></em></li>
+                        </ul>  
+                        <p class="info">Un e-mail vous sera envoyé à <em id="email"></em> à l'envoi du colis</p>
+                        <p class="info">Le total de votre commande est de : <em id="total"></em></p>
+                    </div>
+                </div>
+                </section>
+        </main>
+        <script src="./js/order-confirmation.js"></script>
+    </body>
+</html>

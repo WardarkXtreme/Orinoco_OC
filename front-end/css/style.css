@@ -1,0 +1,224 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: burlywood;
+}
+.back__nav{
+    background-color: #f3e9f1;
+    border-bottom: solid black 2px;
+    box-shadow: black 0px 0px 10px;
+    height: 65px;
+}
+.front__nav{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+.logo__orinoco{
+    width: 145px;
+}
+.logo_shop{
+    font-size: 25px;
+    color: black;
+}
+.logo_shop:hover{
+    background: linear-gradient(110deg, #e68a0a, #8f5bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+}
+.title{
+    font-weight: 700;
+    font-family: "cursive", "sans serif";
+    padding: 40px 30px;
+    text-align: center;
+    color: black;
+    margin: 0;
+}
+.image__index{
+    width: 100%;
+    border-radius: 2em;
+}
+#simple__container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.groupe__info{
+    width: 80%;
+    min-width: none;
+    max-width: 1000px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.name__index, .price__index{
+    width: 40%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+}
+.price__index{
+    justify-content: flex-end;
+}
+.name__index{
+    padding-left: 10%;
+}
+.btn{
+    display: flex;
+    margin: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: auto;
+    width: 30%;
+    min-width: 214px;
+    max-width: 500px;
+    font-size: 24px;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    border: none;
+    margin-bottom: 30px;
+}
+.btn:hover{
+    box-shadow: black 4px 4px 8px;
+}
+.description__product{
+    font-size: 2em;
+    text-align: center;
+}
+.compteur{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+#btnMoins, #btnPlus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+}
+#nombre{
+    font-size: 1.5em;
+}
+#btnMoins:hover, #btnPlus:hover{
+    box-shadow: black 4px 4px 8px;
+}
+.display__none{
+    display: none;
+}
+#simple__container--product{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.choix__couleur{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}    
+#select__color{
+    font-size: 1em;
+    border-radius: 10px;
+}
+.image__product{
+    width: 80%;
+    min-width: 150px;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+#section__produit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 900;
+}
+#section__priceAndForm{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.ajust{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.form__agencement{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+.btn__panier{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.quantity__product{
+    display: flex;
+    justify-content: center;
+    border-bottom: black 2px solid;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+#sendForm, #delete__panier{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    font-size: 1.2em;
+}
+.titleOrder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    border-bottom-width: 50%;
+}
+.title2{
+    margin-right: 20px;
+}
+#valid{
+    font-size: 1.5em;
+    background: linear-gradient(110deg, #e68a0a, #8f5bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#message{
+    width: 80%;
+    list-style-type: none;
+}
+.center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.info{
+    font-size: 1.2em;
+}
+em, li{
+    font-weight: 700;
+    list-style-type: none;
+}
