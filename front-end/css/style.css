@@ -1,7 +1,19 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: burlywood;
+    background-color: rgb(148, 112, 71);
+    animation: appearDown 1s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes appearDown {
+    from{
+        opacity: 0;
+        transform: translate(0, -100%);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
 }
 .back__nav{
     background-color: #f3e9f1;
@@ -39,7 +51,7 @@ body {
 }
 .image__index{
     width: 100%;
-    border-radius: 2em;
+    border-radius: 2em 2em 0 0;
 }
 #simple__container{
     width: 100%;
@@ -50,14 +62,27 @@ body {
     justify-content: space-around;
 }
 .groupe__info{
+    background-color: rgb(104, 75, 42);
     width: 80%;
-    min-width: none;
     max-width: 1000px;
     margin-top: 40px;
     margin-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
-
+    border: white solid;
+    border-radius: 2.5em;
+    box-shadow: black 2px 2px 2px;
+    animation: appearLeft 1s ease;
+}
+@keyframes appearLeft {
+    from{
+        opacity: 0;
+        transform: translate(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0);
+    }
 }
 .name__index, .price__index{
     width: 40%;
@@ -95,6 +120,7 @@ body {
 .description__product{
     font-size: 2em;
     text-align: center;
+    margin-bottom: 20px;
 }
 .compteur{
     display: flex;
@@ -135,10 +161,12 @@ body {
     flex-direction: row;
     font-size: 1.5em;
     margin-bottom: 30px;
+    align-items: center;
 }    
 #select__color{
     font-size: 1em;
     border-radius: 10px;
+    height: 30px;
 }
 .image__product{
     width: 80%;
@@ -221,4 +249,7 @@ body {
 em, li{
     font-weight: 700;
     list-style-type: none;
+}
+span {
+    color: white;
 }

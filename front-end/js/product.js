@@ -27,8 +27,11 @@ function createOurson(ourson) {
     groupeProduct.appendChild(productDescription)
     containerOneProduct.appendChild(groupeProduct)
     //----------ciblage des constantes créés pour leur fournir le chemin d'information//
+    
+    
     groupeProduct.setAttribute("class", "groupe__info")
     productImage.src = ourson.imageUrl
+    productImage.setAttribute("alt", "image-Ourson")
     productImage.setAttribute("class", "image__index")
     productName.innerHTML = ourson.name
     productName.setAttribute("class", "name__index")
