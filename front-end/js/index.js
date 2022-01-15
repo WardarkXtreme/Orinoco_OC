@@ -34,7 +34,7 @@ function createOurson(container, ourson) {
     //  evenement d'envoie lié au bouton du produit //
     productButton.addEventListener("click" ,() => {    
         let idProduct = ourson._id 
-        location.href = 'product.html?' + idProduct; 
+        location.href = './pages/product.html?' + idProduct; 
     })
 }
 getProducts();
