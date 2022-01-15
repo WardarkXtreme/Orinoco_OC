@@ -1,4 +1,24 @@
 Bienvenue sur le projet 5 "Orinoco" d'Openclassrooms!
 
 construire un site e-commerce!
-lien de la page => https://wardarkxtreme.github.io/Orinoco_OC/
+
+Pour pouvoir interagir avec Orinoco :
+
+(1)-Veuillez cloner ce repositorie
+
+\\-------------Lancer le Back-end--------------//
+
+(2)-Veuillez vous assurez d'avoir installer {nodeJs & Npm}
+(3)-lancer les commandes suivantes {cd back-end puis npm start}
+
+\\-------------Lancer le Front-end--------------//
+
+(4)-deux choix s'offres à vous {installez l'extention Live Server sur VsCode}
+(5)-ou glissez de manière manuel le fichier "index.html" dans votre navigateur.
+
+██*▄███▄███▄**███████▄**████████**██*******██
+██*█████████**██     █**██*********██*****██
+██**▀█████▀***██     █**████████****██***██
+██***▀███▀****██     █**██***********██*██
+██****▀█▀*****███████▀**████████******▀█▀
+
