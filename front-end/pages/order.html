@@ -11,7 +11,7 @@
     <body>
         <nav class="back__nav">
             <div class="front__nav">
-                <a href="../index.html"><img src="./pictures/logo.png" alt="Logo_Orinoco" class="logo__orinoco"></a>
+                <a href="../index.html"><img src="../pictures/logo.png" alt="Logo_Orinoco" class="logo__orinoco"></a>
                 <a href="./panier.html"><i class="fas fa-shopping-cart logo_shop"></i></a>
             </div>
         </nav>
@@ -20,18 +20,19 @@
                 <h1 class="title2">Commande Confirmée</h1><i class="fas fa-check" id="valid"></i>
             </div>    
                 <section id="order__confirm">
-                <div class="center">        
-                    <div id="message">
-                        <p class="info">Nous avons bien pris en compte votre commande numéro: </br><em id="orderId"></em></br>Nous vous remercions</p>
-                        <p class="info">Le colis sera expédié à :</p>
-                        <ul>
-                            <li>Monsieur/Madame <em id="name"></em> <em id="lastName"></em></li>
-                            <li>Demeurant à <em id="adress"></em> <em id="city"></em></li>
-                        </ul>  
-                        <p class="info">Un e-mail vous sera envoyé à <em id="email"></em> à l'envoi du colis</p>
-                        <p class="info">Le total de votre commande est de : <em id="total"></em></p>
+                    <h2>Orinoco-Order</h2>
+                    <div class="center">        
+                        <div id="message">
+                            <p class="info">Nous avons bien pris en compte votre commande numéro: <br><em id="orderId"></em><br>Nous vous remercions</p>
+                            <p class="info">Le colis sera expédié à :</p>
+                            <ul>
+                                <li>Monsieur/Madame <em id="name"></em> <em id="lastName"></em></li>
+                                <li>Demeurant à <em id="adress"></em> <em id="city"></em></li>
+                            </ul>  
+                            <p class="info">Un e-mail vous sera envoyé à <em id="email"></em> à l'envoi du colis</p>
+                            <p class="info">Le total de votre commande est de : <em id="total"></em></p>
+                        </div>
                     </div>
-                </div>
                 </section>
         </main>
         <script src="../js/order-confirmation.js"></script>

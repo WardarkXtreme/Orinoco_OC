@@ -222,7 +222,7 @@ body {
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid black;
-    border-bottom-width: 50%;
+    border-bottom-width: 2px;
 }
 .title2{
     margin-right: 20px;
@@ -245,6 +245,9 @@ body {
 }
 .info{
     font-size: 1.2em;
+}
+#order__confirm{
+    background-color: bisque;
 }
 em, li{
     font-weight: 700;

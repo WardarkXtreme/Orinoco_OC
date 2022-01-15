@@ -99,7 +99,7 @@ function postOrder(contactItems) {
         localStorage.setItem('orderId', JSON.stringify(info.orderId));
         localStorage.setItem('total', JSON.stringify(document.querySelector(".result").innerText));
         localStorage.removeItem('panier');
-        document.location.href = "order.html";
+        document.location.href = "../pages/order.html";
     })
 }
 
