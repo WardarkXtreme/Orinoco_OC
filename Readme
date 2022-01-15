@@ -9,7 +9,8 @@ Pour pouvoir interagir avec Orinoco :
 \\-------------Lancer le Back-end--------------//
 
 (2)-Veuillez vous assurez d'avoir installer {nodeJs & Npm}
-(3)-lancer les commandes suivantes {cd back-end puis npm start}
+(3)-lancer les commandes suivantes {cd back-end puis npm install}
+(4)-lancer la commande suivante {npm start}
 
 \\-------------Lancer le Front-end--------------//
 
