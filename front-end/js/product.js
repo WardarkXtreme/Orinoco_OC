@@ -1,3 +1,40 @@
+function Modal() {
+    const mainProduct = document.getElementById("mainProduct")
+    const groupe = document.createElement("div")
+    const infoModal = document.createElement("p")
+    const buttonOne = document.createElement("button")
+    const buttonTwo = document.createElement("button")
+
+    infoModal.innerHTML = "Votre article a été ajouté au panier !"
+    infoModal.setAttribute("class", "infoModal")
+
+    buttonOne.innerHTML = "Continuez vos achats"
+    buttonOne.setAttribute("class", "btnModal")
+
+    buttonTwo.innerHTML = "Accedez au panier"
+    buttonTwo.setAttribute("class", "btnModal")
+
+    groupe.appendChild(infoModal)
+    groupe.appendChild(buttonOne)
+    groupe.appendChild(buttonTwo)
+    groupe.setAttribute("id", "groupeModal")
+
+    mainProduct.appendChild(groupe)
+
+    buttonOne.addEventListener("click", ()=> {
+        window.location.href = "../index.html"
+    })
+    buttonTwo.addEventListener("click", ()=> {
+        window.location.href = "../pages/panier.html"
+    })
+};
+function displayModal () {
+    const noVisible = document.getElementById("simple__container--product")
+    const visible = document.getElementById("groupeModal")
+    noVisible.setAttribute("id", "noVisible")
+    visible.setAttribute("id", "visible")
+};
+
 function getOneProduct() {
     const recuperationId = window.location.search;
     const idServiable = recuperationId.slice(1);
@@ -58,8 +95,7 @@ function createOurson(ourson) {
             produit.push(itemInfo)
             localStorage.setItem("panier", JSON.stringify(produit))
         }
-        document.location.reload()
-        window.alert("votre article a été ajouté dans le panier")
+        displayModal()
     })
 }
 function chooseColor(container, colorOurson) {
@@ -90,3 +126,4 @@ function btnQuantity() {
 }
 getOneProduct();
 btnQuantity();
+Modal();
