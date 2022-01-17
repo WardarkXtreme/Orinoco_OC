@@ -3,6 +3,10 @@ function delOneProduct(itemInfo) {
     let basket = JSON.parse(localStorage.getItem("basket"))
     basket = basket.filter(item => item.id != itemInfo)
     localStorage.setItem("basket", JSON.stringify(basket))
+    const verify = JSON.parse(localStorage.getItem("basket"))
+    if(verify[0] == null){
+        localStorage.clear("basket")
+    }
 }
 function getProductsLocaleStorage() {
     let productPanier = JSON.parse(localStorage.getItem("basket"))
