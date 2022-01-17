@@ -1,3 +1,28 @@
+function saveBasket(basket){
+    localStorage.setItem("basket", JSON.stringify(basket))
+}
+function getBasket() {
+    let basket = localStorage.getItem("basket");
+    if(basket == null){
+        return []
+    }else {
+        return JSON.parse(basket);
+    }
+}
+function addBasket(itemInfo) {
+    const quantity = document.getElementById('nombre').innerText;
+    let basket = getBasket();
+    let foundProduct = basket.find(p => p.id == itemInfo.id);
+    if(foundProduct != undefined) {
+        let value = JSON.parse(quantity)
+        let value2 = JSON.parse(foundProduct.quantité)
+        console.log(value)
+        foundProduct.quantité = (value+value2);
+    }else {
+        basket.push(itemInfo);
+    }
+    saveBasket(basket);
+}
 function Modal() {
     const mainProduct = document.getElementById("mainProduct")
     const groupe = document.createElement("div")
@@ -36,8 +61,8 @@ function displayModal () {
 };
 
 function getOneProduct() {
-    const recuperationId = window.location.search;
-    const idServiable = recuperationId.slice(1);
+
+    const idServiable = window.location.search.slice(1);
     fetch("http://localhost:3000/api/teddies/" + idServiable)
     .then((res) => res.json())
     .then((dataOneProduct) => {
@@ -85,17 +110,8 @@ function createOurson(ourson) {
             prix : ourson.price,
             quantité : quantity
         }
-        let  produit = JSON.parse(localStorage.getItem("panier"))
-        if(produit) {
-            produit.push(itemInfo)
-            localStorage.setItem("panier", JSON.stringify(produit))
-        }
-        else{
-            produit = []
-            produit.push(itemInfo)
-            localStorage.setItem("panier", JSON.stringify(produit))
-        }
-        displayModal()
+        addBasket(itemInfo);
+        displayModal();
     })
 }
 function chooseColor(container, colorOurson) {
@@ -124,6 +140,7 @@ function btnQuantity() {
         nombre.innerText = compteur;
     });
 }
+
 getOneProduct();
 btnQuantity();
 Modal();

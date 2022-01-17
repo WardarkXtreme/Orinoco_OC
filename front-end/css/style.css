@@ -43,20 +43,38 @@ body {
 }
 .title{
     font-weight: 700;
+    display: flex;
     font-family: "cursive", "sans serif";
-    padding: 40px 30px;
-    text-align: center;
-    color: black;
+    color: white;
     margin: 0;
+    font-size: 4vh;
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+}
+h1{
+    color: white;
+}
+h2{
+    color: white;
+    font-size: 4vh;
+}
+.h2{
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 .image__index{
     width: 100%;
     border-radius: 2em 2em 0 0;
+    max-height: 550px;
+    object-fit: cover;
 }
 #mainProduct{
     display: flex;
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -91,6 +109,7 @@ body {
     border: none;
     box-shadow: black 1px 1px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 .btnModal:hover{
     box-shadow: black 2px 2px;
@@ -102,14 +121,14 @@ body {
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
 }
 .groupe__info{
     background-color: rgb(104, 75, 42);
-    width: 80%;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 900px;
     margin-top: 40px;
     margin-bottom: 40px;
     display: flex;
@@ -118,6 +137,15 @@ body {
     border-radius: 2.5em;
     box-shadow: black 2px 2px 2px;
     animation: appearLeft 1s ease;
+}
+.global{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 300px;
+    max-width: 450px;
+    background-color: white;
 }
 @keyframes appearLeft {
     from{
@@ -158,6 +186,7 @@ body {
     background-color: lightgray;
     border: none;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 .btn:hover{
     box-shadow: black 4px 4px 8px;
@@ -174,6 +203,9 @@ body {
     font-size: 2em;
     margin-bottom: 30px;
 }
+#btnMoins{
+    padding-bottom: 12px;
+}
 #btnMoins, #btnPlus{
     display: flex;
     align-items: center;
@@ -185,6 +217,7 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     border: none;
+    cursor: pointer;
 }
 #nombre{
     font-size: 1.5em;
@@ -197,8 +230,10 @@ body {
 }
 #simple__container--product{
     display: flex;
-    flex-direction: column-reverse;
+    flex-wrap: wrap-reverse;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 .choix__couleur{
     display: flex;
@@ -214,10 +249,22 @@ body {
     height: 30px;
 }
 .image__product{
-    width: 80%;
+    width: 100%;
     min-width: 150px;
-    max-width: 500px;
+    max-width: 650px;
     margin-bottom: 20px;
+    border-radius: 1.7em 1.7em 0 0;
+}
+.name__product, .price__product {
+    color: white;
+    width: 40%;   
+}
+.name__product{
+    padding-left: 10%;
+}
+.price__product {
+    text-align: end;
+    padding-right: 10%;
 }
 #section__produit{
     display: flex;
@@ -226,10 +273,21 @@ body {
     font-size: 1.5em;
     font-weight: 900;
 }
+.groupe__product{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 650px;
+    background-color: rgb(104, 75, 42);;
+    border-radius: 2em;
+    margin-bottom: 40px;
+    border: white solid;
+    justify-content: center;
+}
 #section__priceAndForm{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
+    max-width: 650px;
 }
 .ajust{
     width: 100%;
@@ -247,14 +305,20 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    cursor: pointer;
 }
 .quantity__product{
     display: flex;
     justify-content: center;
-    border-bottom: black 2px solid;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    width: 80%;
+    width: 100%;
+}
+.btnDel{
+    border: none;
+    margin: 20px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: white 3px 0px;
+    cursor: pointer;
 }
 #sendForm, #delete__panier{
     margin-top: 10px;
@@ -312,4 +376,7 @@ span {
     border-radius: 2vh;
     height: auto;
     justify-content: space-around;
+}
+#sendForm, #delete__panier{
+    border-radius: 2vh;
 }

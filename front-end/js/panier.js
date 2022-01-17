@@ -1,10 +1,16 @@
+
+function delOneProduct(itemInfo) {
+    let basket = JSON.parse(localStorage.getItem("basket"))
+    basket = basket.filter(item => item.id != itemInfo)
+    localStorage.setItem("basket", JSON.stringify(basket))
+}
 function getProductsLocaleStorage() {
-    let productPanier = JSON.parse(localStorage.getItem("panier"))
-    if (productPanier) {    
+    let productPanier = JSON.parse(localStorage.getItem("basket"))
+    if (productPanier) {
         let coutTotal = 0;
         productPanier.forEach(ourson => {
             createPanierOurson(document.getElementById("section__produit"), ourson)
-            coutTotal += ourson.prix/100 * ourson.quantité
+            coutTotal += ourson.prix / 100 * ourson.quantité
         });
         const totalPanier = document.querySelector(".result")
         totalPanier.innerHTML = coutTotal + " €"
@@ -14,8 +20,8 @@ function getProductsLocaleStorage() {
         deletePanier.addEventListener("click", () => {
             localStorage.clear()
             document.location.reload()
-        }) 
-    }else{
+        })
+    } else {
         productPanier = document.getElementById("section__priceAndForm")
         const product = document.getElementById("section__produit")
         const cache = document.getElementById("cache")
@@ -27,30 +33,42 @@ function getProductsLocaleStorage() {
     }
 }
 function createPanierOurson(containerPanierProduct, ourson) {
-    
+
     //----------Création des elements HTML -------------------------------//
+    const groupe = document.createElement("div")
     const productImage = document.createElement("img")
     const productName = document.createElement("span")
     const productPrice = document.createElement("span")
     const productQuantity = document.createElement("span")
-    
+    const btnDel = document.createElement("button")
+
     //liaison de la constante parente qui recois les informations--------------------// 
-    containerPanierProduct.appendChild(productImage)
-    containerPanierProduct.appendChild(productName)
-    containerPanierProduct.appendChild(productPrice)
-    containerPanierProduct.appendChild(productQuantity)
+    groupe.appendChild(productImage)
+    groupe.appendChild(productName)
+    groupe.appendChild(productPrice)
+    groupe.appendChild(productQuantity)
+    groupe.appendChild(btnDel)
+    containerPanierProduct.appendChild(groupe)
     //----------ciblage des constantes créés pour leur fournir le chemin d'information//
+    groupe.setAttribute("class", "groupe__product")
     productImage.src = ourson.image
     productImage.setAttribute("class", "image__product")
     productName.innerHTML = ourson.nom
     productName.setAttribute("class", "name__product")
     productPrice.innerHTML = ourson.prix / 100 + ' €'
     productPrice.setAttribute("class", "price__product")
-    productQuantity.innerHTML = "Quantité:" + ourson.quantité 
+    productQuantity.innerHTML = "Quantité: " + ourson.quantité
     productQuantity.setAttribute("class", "quantity__product")
+    const itemInfo = ourson.id
+    btnDel.innerText = "supprimer l'article"
+    btnDel.setAttribute("class", "btnDel")
+    btnDel.addEventListener("click", () => {
+        delOneProduct(itemInfo);
+        document.location.reload();
+    })
     const form = document.getElementById("Form")
     form.addEventListener("submit", () => {
-       sendForm();
+        sendForm();
     })
 }
 
@@ -67,12 +85,12 @@ function sendForm() {
     let products = [];
     if (localStorage.getItem('order')) {
         let productTab = JSON.parse(localStorage.getItem('order'));
-        
-        productTab.forEach( ourson => {
+
+        productTab.forEach(ourson => {
             products.push(ourson._id);
         })
     }
-    
+
     let contactItems = JSON.stringify({
         contact, products
     })
@@ -90,17 +108,17 @@ function postOrder(contactItems) {
         headers: {
             'Content-Type': 'application/json'
         },
-        mode:'cors',
+        mode: 'cors',
         body: contactItems
     })
-    .then((res) => res.json())
-    .then( info => {
-        localStorage.setItem('contact', JSON.stringify(info.contact));
-        localStorage.setItem('orderId', JSON.stringify(info.orderId));
-        localStorage.setItem('total', JSON.stringify(document.querySelector(".result").innerText));
-        localStorage.removeItem('panier');
-        document.location.href = "../pages/order.html";
-    })
+        .then((res) => res.json())
+        .then(info => {
+            localStorage.setItem('contact', JSON.stringify(info.contact));
+            localStorage.setItem('orderId', JSON.stringify(info.orderId));
+            localStorage.setItem('total', JSON.stringify(document.querySelector(".result").innerText));
+            localStorage.removeItem('basket');
+            document.location.href = "../pages/order.html";
+        })
 }
 
 
