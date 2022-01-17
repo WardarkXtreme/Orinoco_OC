@@ -50,6 +50,7 @@ body {
     font-size: 4vh;
     width: 100%;
     justify-content: center;
+    text-align: center;
     margin-top: 50px;
 }
 h1{
@@ -63,6 +64,10 @@ h2{
     display: flex;
     width: 100%;
     justify-content: center;
+}
+.black{
+    color: black;
+    font-size: 2em;
 }
 .image__index{
     width: 100%;
@@ -225,7 +230,14 @@ h2{
 #btnMoins:hover, #btnPlus:hover{
     box-shadow: black 4px 4px 8px;
 }
-.display__none{
+#cache{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-size: 3vw;
+}
+#display__none{
     display: none;
 }
 #simple__container--product{
@@ -356,7 +368,19 @@ h2{
     font-size: 1.2em;
 }
 #order__confirm{
-    background-color: bisque;
+    background-color: white;
+    margin-top: 90px;
+}
+#email{
+    font-size: 35px;
+}
+#total{
+    font-size: 50px;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
 }
 em, li{
     font-weight: 700;
@@ -364,6 +388,12 @@ em, li{
 }
 span {
     color: white;
+}
+#orderId{
+    display: flex;
+    font-size: 40px;
+    margin: 33px 0;
+    justify-content: center;
 }
 #noVisible{
     display: none;

@@ -26,10 +26,20 @@ function getProductsLocaleStorage() {
         const product = document.getElementById("section__produit")
         const cache = document.getElementById("cache")
         const panierVide = document.createElement("h1")
+        const annonce = document.createElement("h2")
         cache.appendChild(panierVide)
+        cache.appendChild(annonce)
         panierVide.innerHTML = "Votre panier est vide..."
-        productPanier.setAttribute("class", "display__none")
-        product.setAttribute("class", "display__none")
+        annonce.innerHTML = "vous allez être redirigé"
+        productPanier.setAttribute("id", "display__none")
+        product.setAttribute("id", "display__none")
+        function redirection() {
+            window.location.replace("../index.html")
+        }
+        function awaitRedirection(){
+            setTimeout(redirection, 3000);
+        }
+        awaitRedirection();        
     }
 }
 function createPanierOurson(containerPanierProduct, ourson) {

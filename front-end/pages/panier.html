@@ -41,11 +41,11 @@
                             </div>
                             <div class="form__agencement">
                                 <label for="address">Votre adresse</label>
-                                <input type="text" name="address" id="address" pattern="[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)+" required> 
+                                <input type="text" name="address" id="address" pattern="([0-9]*) ?([a-zA-Z,\. ]*)" required> 
                             </div>
                             <div class="form__agencement">
                                 <label for="city">Votre ville</label>
-                                <input type="text" name="city" id="city" pattern="[A-Za-z]{2,}" required> 
+                                <input type="text" name="city" id="city" pattern="([A-Za-z]*) ?{15,}" required> 
                             </div>
                             <div class="btn__panier">
                                 <button id="sendForm">Valider ma commande</button>
