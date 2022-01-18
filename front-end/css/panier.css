@@ -1,0 +1,167 @@
+@import url(./utils.css);
+/*_______------------Panier--------------________*/
+#cache{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-size: 3vw;
+}
+#section__produit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 900;
+}
+.groupe__product{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 650px;
+    background-color: rgb(104, 75, 42);;
+    border-radius: 2em;
+    margin-bottom: 40px;
+    border: white solid;
+    justify-content: center;
+    box-shadow: white 3px 3px 8px;
+}
+.image__product{
+    width: 100%;
+    min-width: 150px;
+    max-width: 650px;
+    margin-bottom: 20px;
+    border-radius: 1.7em 1.7em 0 0;
+}
+.description__product{
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.name__product, .price__product {
+    color: white;
+    width: 40%;   
+}
+.name__product{
+    padding-left: 10%;
+}
+.price__product {
+    text-align: end;
+    padding-right: 10%;
+}
+.quantity__product{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+}
+.btnDel{
+    border: none;
+    margin: 20px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: white 3px 0px;
+    cursor: pointer;
+}
+.ajust{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#section__priceAndForm{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    width: 100%;
+    max-width: 650px;
+    color: white;
+    background-color: rgb(104, 75, 42);
+    border-radius: 2em;
+    border: white solid 4px;
+    box-shadow: white 3px 3px 8px;
+}
+#Form{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.form__agencement{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2% 5%;
+}
+.btn__panier{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+#sendForm, #delete__panier{
+    height: 40px;
+    width: 200px;
+    margin: 25px 0;
+    border-radius: 2em;
+    border: none;
+}
+/*____________________----------orderConfirm------------_________________*/
+.titleOrder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title2{
+    padding-right: 5%;
+}
+.title2, #valid{
+    color: white;
+    font-size: 8vw;
+}
+#valid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellowgreen;
+    height: 10vw;
+    width: 10vw;
+    border-radius: 50%;
+    animation: validTurn 1.5s infinite linear;
+}
+#message{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    list-style-type: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+.center{
+    text-align: justify;
+}
+.info{
+    font-size: 1.2em;
+}
+#order__confirm{
+    background-color: white;
+    margin-top: 90px;
+}
+#email{
+    font-size: 35px;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+em, li{
+    font-weight: 700;
+    list-style-type: none;
+}
+#orderId{
+    font-size: 5vw;
+}

@@ -1,4 +1,4 @@
-
+//-------------fonction de suppression d'article dans le panier grace à son Id avec la methode find---//
 function delOneProduct(itemInfo) {
     let basket = JSON.parse(localStorage.getItem("basket"))
     basket = basket.filter(item => item.id != itemInfo)
@@ -8,6 +8,8 @@ function delOneProduct(itemInfo) {
         localStorage.clear("basket")
     }
 }
+//----Fonction qui gère le comportement à adopter si un panier est present on l'affiche et on calcul son total sinon on affiche que le panier 
+//----------------------------est vide est on redirige l'utilisateur.
 function getProductsLocaleStorage() {
     let productPanier = JSON.parse(localStorage.getItem("basket"))
     if (productPanier) {
@@ -46,8 +48,8 @@ function getProductsLocaleStorage() {
         awaitRedirection();        
     }
 }
+//----------fonction qui permet de Créer le DOM qui servira à afficher les articles trouvé par le forEach 
 function createPanierOurson(containerPanierProduct, ourson) {
-
     //----------Création des elements HTML -------------------------------//
     const groupe = document.createElement("div")
     const productImage = document.createElement("img")
@@ -85,9 +87,9 @@ function createPanierOurson(containerPanierProduct, ourson) {
         sendForm();
     })
 }
-
-
+//fonction gérant le formulaire et l'envois
 function sendForm() {
+    // variable truc = {} <=  est une maniere de creer un objet de paire clef: valeur
     let contact = {
         firstName: document.getElementById("firstname").value,
         lastName: document.getElementById("name").value,
@@ -95,11 +97,10 @@ function sendForm() {
         city: document.getElementById("city").value,
         email: document.getElementById("email").value
     };
-
     let products = [];
     if (localStorage.getItem('order')) {
         let productTab = JSON.parse(localStorage.getItem('order'));
-
+        //pour chaque ourson trouver dans l'order on va envoyer l'id dans le tableau products
         productTab.forEach(ourson => {
             products.push(ourson._id);
         })
@@ -110,30 +111,29 @@ function sendForm() {
     })
     postOrder(contactItems);
 };
-// =====================================================================================
-
 //Requête POST, envoi au serveur "contact" et le tableau d'id "products"
-//Enregistre l'objet "contact" et Id, le total de la commande sur le sessionStorage.
+//Enregistre l'objet "contact" et Id, le total de la commande sur le localeStorage.
 //Envoie page "confirmation"
 function postOrder(contactItems) {
 
     fetch("http://localhost:3000/api/teddies/order", {
         method: 'POST',
+        //L'en-tête est là pour que votre application puisse détecter quelles données ont été renvoyées et comment elle doit les gérer.en l'occurence en .json//
         headers: {
             'Content-Type': 'application/json'
         },
         mode: 'cors',
         body: contactItems
     })
-        .then((res) => res.json())
-        .then(info => {
-            localStorage.setItem('contact', JSON.stringify(info.contact));
-            localStorage.setItem('orderId', JSON.stringify(info.orderId));
-            localStorage.setItem('total', JSON.stringify(document.querySelector(".result").innerText));
-            localStorage.removeItem('basket');
-            document.location.href = "../pages/order.html";
-        })
+    //on transforme la reponse en format json
+    .then((res) => res.json())
+    .then(info => {
+        // on recupere les données et on leurs attribut une logique de sauvegarde dans le localStorage
+        localStorage.setItem('contact', JSON.stringify(info.contact));
+        localStorage.setItem('orderId', JSON.stringify(info.orderId));
+        localStorage.setItem('total', JSON.stringify(document.querySelector(".result").innerText));
+        localStorage.removeItem('basket');
+        document.location.href = "../pages/order.html";
+    })
 }
-
-
 getProductsLocaleStorage();

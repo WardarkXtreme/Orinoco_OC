@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(148, 112, 71);
+    animation: appearDown 1s ease;
+    animation-fill-mode: forwards;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+button{
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 8px;
+    cursor: pointer;
+}
+button:hover{
+    transform: translateY(-5px);
+    box-shadow: 7px 7px 8px;
+}
+button:active{
+    box-shadow: none;
+    transform: translateY(0px);
+}
+/*---------Animation-----------*/
+@keyframes appearDown {
+    from{
+        opacity: 0;
+        transform: translate(0, -100%);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+@keyframes appearLeft {
+    from{
+        opacity: 0;
+        transform: translate(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes validTurn {
+    0%{
+        font-size: 13vw;
+        height: 10vw;
+        width: 10vw;
+        transform: rotate(0deg)
+    }
+    20%{
+        font-size: 10vw;
+        height: 7vw;
+        width: 7vw;
+        transform: rotate(35deg)
+    }
+    30%{
+        font-size: 12vw;
+        height: 5vw;
+        width: 5vw;
+        transform: rotate(65deg)
+    }
+    50%{
+        font-size: 10vw;
+        height: 10vw;
+        width: 10vw;
+        transform: rotate(360deg)
+    }
+    80%{
+        font-size: 10vw;
+        height: 10vw;
+        width: 10vw;
+        transform: rotate(360deg)
+    }
+    100%{
+        font-size: 12vw;
+        height: 10vw;
+        width: 10vw;
+        transform: rotate(360deg)
+    }
+}
+#display__none{
+    display: none;
+}
+#noVisible{
+    display: none;
+}
+/*---------NAV Barre-----------*/
+.back__nav{
+    background-color: #f3e9f1;
+    border-bottom: none;
+    box-shadow: white 5px 5px 10px;
+    height: 65px;
+}
+.front__nav{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+.logo__orinoco{
+    width: 145px;
+}
+.logo_shop{
+    font-size: 25px;
+    color: black;
+}
+.logo_shop:hover{
+    background: linear-gradient(110deg, #e68a0a, #8f5bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+}

@@ -1,3 +1,4 @@
+//creation d'une fonction avec la methode fetch pour recuperer les données de l'api
 function getProducts() {
     fetch ("http://localhost:3000/api/teddies")
     .then((res) => res.json())
@@ -7,6 +8,7 @@ function getProducts() {
         });
     })
 }
+// fonction qui permet de creer les elements du DOM pour chaque ourson creer dans le forEach
 function createOurson(container, ourson) {   
     //----------Création des elements HTML -------------------------------//
     const groupeProduct = document.createElement("div")
@@ -20,7 +22,6 @@ function createOurson(container, ourson) {
     groupeProduct.appendChild(productPrice)
     groupeProduct.appendChild(productButton)
     container.appendChild(groupeProduct)
-
     //----------ciblage des constantes créés pour leur fournir le chemin d'information//
     groupeProduct.setAttribute("class", "groupe__info")
     productImage.src = ourson.imageUrl

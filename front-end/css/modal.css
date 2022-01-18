@@ -1,0 +1,40 @@
+#visible{
+    display: flex;
+    max-width: 700px;
+    background-color: white;
+    flex-wrap: wrap;
+    border-radius: 2vh;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+.title{
+    padding-left: 20px;
+}
+#groupeModal{
+    display: none;
+}
+.infoModal{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+}
+.btnModal{
+    display: flex;
+    background-color: rgb(148, 112, 71);
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    width: 250px;
+    height: auto;
+    min-height: 35px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2vh;
+    border: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+}

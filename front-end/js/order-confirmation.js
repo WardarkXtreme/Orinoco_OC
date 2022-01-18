@@ -1,3 +1,6 @@
+//fonction d'affichages des données renvoyées par l'API 
+//les données de l'API ont étées enregistrés dans le local storage
+//ont creer les éléments du DOM et on leurs aprends le contenu du localStorage 
 function displayOrderConfirm() {
     const contact = JSON.parse(localStorage.getItem("contact"));
     const orderId = JSON.parse(localStorage.getItem("orderId"));
