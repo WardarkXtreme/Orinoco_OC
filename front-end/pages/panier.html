@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="description" content="Orinoco, site de vente en ligne, spécialiste en vente d'ours en peluche fait à la main.">
         <link rel="stylesheet" href="../css/panier.css"/>
+        <link rel="icon" type="image/png" href="../pictures/orinoco.png" />
         <script src="https://kit.fontawesome.com/8be45f96a1.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -41,11 +42,11 @@
                             </div>
                             <div class="form__agencement">
                                 <label for="address">Votre adresse</label>
-                                <input type="text" name="address" id="address" pattern="([0-9]*) ?([a-zA-Z,\. ]*)" required> 
+                                <input type="text" name="address" id="address" pattern="[0-9 ]+?[a-zA-Z ]{2,}" required> 
                             </div>
                             <div class="form__agencement">
                                 <label for="city">Votre ville</label>
-                                <input type="text" name="city" id="city" pattern="([A-Za-z]*) ?{15,}" required> 
+                                <input type="text" name="city" id="city" pattern="[A-Za-z ]{2,}" required> 
                             </div>
                             <div class="btn__panier">
                                 <button id="sendForm">Valider ma commande</button>

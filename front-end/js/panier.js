@@ -114,11 +114,11 @@ function sendForm() {
 //Requête POST, envoi au serveur "contact" et le tableau d'id "products"
 //Enregistre l'objet "contact" et Id, le total de la commande sur le localeStorage.
 //Envoie page "confirmation"
-function postOrder(contactItems) {
+ function postOrder(contactItems) {
 
     fetch("http://localhost:3000/api/teddies/order", {
         method: 'POST',
-        //L'en-tête est là pour que votre application puisse détecter quelles données ont été renvoyées et comment elle doit les gérer.en l'occurence en .json//
+        //L'en-tête est là pour que l'application puisse détecter quelles données ont été renvoyées et comment elle doit les gérer.en l'occurence en .json//
         headers: {
             'Content-Type': 'application/json'
         },
@@ -132,8 +132,8 @@ function postOrder(contactItems) {
         localStorage.setItem('contact', JSON.stringify(info.contact));
         localStorage.setItem('orderId', JSON.stringify(info.orderId));
         localStorage.setItem('total', JSON.stringify(document.querySelector(".result").innerText));
-        localStorage.removeItem('basket');
         document.location.href = "../pages/order.html";
-    })
+        localStorage.removeItem('basket');
+    });
 }
 getProductsLocaleStorage();
