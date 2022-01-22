@@ -4,7 +4,7 @@ function delOneProduct(itemInfo) {
     basket = basket.filter(item => item.id != itemInfo)
     localStorage.setItem("basket", JSON.stringify(basket))
     const verify = JSON.parse(localStorage.getItem("basket"))
-    if(verify[0] == null){
+    if (verify[0] == null) {
         localStorage.clear("basket")
     }
 }
@@ -42,10 +42,10 @@ function getProductsLocaleStorage() {
         function redirection() {
             window.location.replace("../index.html")
         }
-        function awaitRedirection(){
+        function awaitRedirection() {
             setTimeout(redirection, 3000);
         }
-        awaitRedirection();        
+        awaitRedirection();
     }
 }
 //----------fonction qui permet de Créer le DOM qui servira à afficher les articles trouvé par le forEach 
@@ -83,7 +83,8 @@ function createPanierOurson(containerPanierProduct, ourson) {
         document.location.reload();
     })
     const form = document.getElementById("Form")
-    form.addEventListener("submit", () => {
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
         sendForm();
     })
 }
@@ -98,23 +99,19 @@ function sendForm() {
         email: document.getElementById("email").value
     };
     let products = [];
-    if (localStorage.getItem('order')) {
-        let productTab = JSON.parse(localStorage.getItem('order'));
-        //pour chaque ourson trouver dans l'order on va envoyer l'id dans le tableau products
-        productTab.forEach(ourson => {
-            products.push(ourson._id);
-        })
-    }
 
-    let contactItems = JSON.stringify({
-        contact, products
+    let productTab = JSON.parse(localStorage.getItem('basket'));
+    //pour chaque ourson trouver dans le panier on va envoyer l'id dans le tableau products
+    productTab.forEach(ourson => {
+        products.push(ourson.id);
     })
-    postOrder(contactItems);
+    let contactItems = JSON.stringify({ contact, products })
+    postOrder(contactItems)
 };
 //Requête POST, envoi au serveur "contact" et le tableau d'id "products"
 //Enregistre l'objet "contact" et Id, le total de la commande sur le localeStorage.
 //Envoie page "confirmation"
- function postOrder(contactItems) {
+function postOrder(contactItems) {
 
     fetch("http://localhost:3000/api/teddies/order", {
         method: 'POST',
@@ -125,15 +122,23 @@ function sendForm() {
         mode: 'cors',
         body: contactItems
     })
-    //on transforme la reponse en format json
-    .then((res) => res.json())
-    .then(info => {
-        // on recupere les données et on leurs attribut une logique de sauvegarde dans le localStorage
-        localStorage.setItem('contact', JSON.stringify(info.contact));
-        localStorage.setItem('orderId', JSON.stringify(info.orderId));
-        localStorage.setItem('total', JSON.stringify(document.querySelector(".result").innerText));
-        document.location.href = "../pages/order.html";
-        localStorage.removeItem('basket');
-    });
+        //on transforme la reponse en format json
+        .then((res) => res.json())
+        .then((info) => {
+
+            const verifContact = localStorage.getItem('contact')
+            const verifOrderId = localStorage.getItem('orderId')
+            const verifTotal= localStorage.getItem('total')
+            if(verifContact && verifOrderId && verifTotal != undefined){
+                localStorage.removeItem('contact', 'orderId', 'total');
+            }
+            // on recupere les données et on leurs attribut une logique de sauvegarde dans le localStorage
+            localStorage.setItem('contact', JSON.stringify(info.contact));
+            localStorage.setItem('orderId', JSON.stringify(info.orderId));
+            localStorage.setItem('total', JSON.stringify(document.querySelector(".result").innerText));
+            console.log("j'arrive jusqu'ici")
+            window.location = "/front-end/pages/order.html"
+            localStorage.removeItem('basket')
+        })
 }
 getProductsLocaleStorage();

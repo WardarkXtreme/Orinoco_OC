@@ -21,7 +21,6 @@ function addBasket(itemInfo) {
         //s'il est present il ne renverra pas undefini donc on parse les quantité pour pouvoir les additionner
         let value = JSON.parse(quantity)
         let value2 = JSON.parse(foundProduct.quantité)
-        console.log(value)
         foundProduct.quantité = (value+value2);
     }else {
         basket.push(itemInfo);
